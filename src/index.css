@@ -1,0 +1,155 @@
+@import './styles/variables.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #17293d;
+    background-color: #f3f6f9;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    outline: 2px solid #246beb;
+    outline-offset: 2px;
+  }
+
+  /* Remove outline for mouse users */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Component utilities */
+@layer components {
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #c8d4dd transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #c8d4dd;
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #94a5b6;
+  }
+}
+
+/* Utility classes for Figma-accurate typography */
+@layer utilities {
+  .text-display-xl {
+    font-size: 27px;
+    line-height: 1;
+    letter-spacing: -0.8px;
+    font-weight: 400;
+  }
+
+  .text-heading-lg {
+    font-size: 29px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 600;
+  }
+
+  .text-heading-md {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .text-heading-sm {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .text-body-lg {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .text-body-base {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .text-body-sm {
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .text-body-xs {
+    font-size: 10px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .text-caption {
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .text-caption-xs {
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .text-table-header {
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .text-metric-value {
+    font-size: 29px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 600;
+  }
+
+  .text-metric-trend {
+    font-size: 10px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}

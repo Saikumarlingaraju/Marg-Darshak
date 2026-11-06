@@ -1,0 +1,121 @@
+/* Figma Design Tokens as CSS Custom Properties
+ * These provide a fallback for non-Tailwind contexts
+ * and enable dynamic theming if needed in the future.
+ */
+
+:root {
+  /* Colors - Primary Brand */
+  --color-primary: #17293d;
+  --color-primary-dark: #0f1c2e;
+  --color-primary-light: #1e3a5f;
+
+  /* Colors - Semantic */
+  --color-success: #16856b;
+  --color-success-bg: #e7f5ef;
+  --color-success-text: #16856b;
+
+  --color-info: #246beb;
+  --color-info-bg: #eaf0f2;
+  --color-info-text: #246beb;
+
+  --color-warning: #d68b17;
+  --color-warning-bg: #fff4dc;
+  --color-warning-text: #d68b17;
+
+  --color-error: #d94e50;
+  --color-error-bg: #fdebec;
+  --color-error-text: #d94e50;
+
+  /* Colors - Neutral */
+  --color-neutral-50: #f3f6f9;
+  --color-neutral-100: #eaf0f2;
+  --color-neutral-200: #dde5ed;
+  --color-neutral-300: #c8d4dd;
+  --color-neutral-400: #94a5b6;
+  --color-neutral-500: #82959f;
+  --color-neutral-600: #67788b;
+  --color-neutral-700: #4a5d6e;
+  --color-neutral-800: #2d3e4f;
+  --color-neutral-900: #17293d;
+
+  /* Colors - Chart Series */
+  --color-chart-series1: #246beb;
+  --color-chart-series2: #4984d2;
+  --color-chart-series3: #659dba;
+  --color-chart-series4: #7eb2c2;
+  --color-chart-series5: #a1c4cd;
+  --color-chart-area1: rgba(73, 132, 210, 0.15);
+  --color-chart-grid: #dde5ed;
+
+  /* Colors - Overlay */
+  --color-overlay-white75: rgba(255, 255, 255, 0.75);
+
+  /* Typography - Font Family */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Typography - Font Sizes & Styles */
+  --text-display-xl: 27px;
+  --text-heading-lg: 29px;
+  --text-heading-md: 24px;
+  --text-heading-sm: 15px;
+  --text-body-lg: 13px;
+  --text-body-base: 12px;
+  --text-body-sm: 11px;
+  --text-body-xs: 10px;
+  --text-caption: 9px;
+  --text-caption-xs: 8px;
+  --text-table-header: 9px;
+  --text-metric-value: 29px;
+  --text-metric-trend: 10px;
+
+  /* Typography - Line Heights */
+  --leading-tight: 1;
+  --leading-normal: 1.5;
+
+  /* Typography - Letter Spacing */
+  --tracking-tight: -0.8px;
+  --tracking-tighter: -1px;
+  --tracking-wide: 1px;
+  --tracking-wider: 0.7px;
+
+  /* Typography - Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Spacing */
+  --space-header-h: 70px;
+  --space-content-pad-x: 28px;
+  --space-content-pad-y: 25px;
+  --space-content-pad-y-b: 24px;
+  --space-card-pad: 20px;
+  --space-card-pad-lg: 21px;
+  --space-panel-pad: 18px;
+  --space-gap-section: 20px;
+  --space-gap-card: 16px;
+  --space-gap-metric: 8px;
+  --space-gap-inline-sm: 6px;
+  --space-gap-inline: 10px;
+  --space-gap-inline-lg: 22px;
+
+  /* Border Radius */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 5px;
+  --radius-lg: 6px;
+  --radius-xl: 10px;
+  --radius-2xl: 22px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-panel: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-dropdown: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-map-control: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* Z-Index */
+  --z-dropdown: 50;
+  --z-sticky: 40;
+  --z-modal: 100;
+  --z-toast: 110;
+}

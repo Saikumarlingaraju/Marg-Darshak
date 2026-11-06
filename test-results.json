@@ -1,0 +1,55 @@
+{
+  "timestamps": "2026-11-06T08:55:03.136Z",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "screenshot": "desktop-1440x900.png"
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024,
+      "screenshot": "tablet-768x1024.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "screenshot": "mobile-390x844.png"
+    }
+  },
+  "errors": [],
+  "functionalTests": {
+    "desktop_dashboardLoads": true,
+    "desktop_sidebarVisible": true,
+    "desktop_kpiCardsRender": true,
+    "desktop_chartsRender": false,
+    "desktop_citySelector": true,
+    "desktop_search": true,
+    "desktop_notifications": true,
+    "desktop_tables": false,
+    "desktop_tableSorting": false,
+    "desktop_tablePagination": false,
+    "tablet_dashboardLoads": true,
+    "tablet_sidebarVisible": true,
+    "tablet_kpiCardsRender": true,
+    "tablet_chartsRender": false,
+    "tablet_citySelector": true,
+    "tablet_search": true,
+    "tablet_notifications": true,
+    "tablet_tables": false,
+    "tablet_tableSorting": false,
+    "tablet_tablePagination": false,
+    "mobile_dashboardLoads": true,
+    "mobile_sidebarVisible": true,
+    "mobile_kpiCardsRender": true,
+    "mobile_chartsRender": false,
+    "mobile_citySelector": true,
+    "mobile_search": true,
+    "mobile_notifications": true,
+    "mobile_tables": false,
+    "mobile_tableSorting": false,
+    "mobile_tablePagination": false,
+    "mobile_mobileNavHamburger": true,
+    "mobile_mobileNavOverlay": true
+  }
+}
