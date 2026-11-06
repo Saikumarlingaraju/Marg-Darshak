@@ -8,7 +8,7 @@ import type { ChartDataPoint, BarChartData } from '@/lib/api';
 
 /**
  * Mock Detection Trends - 7 days of data for line/area chart
- * Realistic Bengaluru urban infrastructure detection data
+ * Realistic Hyderabad urban infrastructure detection data
  * @mock
  */
 export const MOCK_DETECTION_TRENDS: ChartDataPoint[] = [

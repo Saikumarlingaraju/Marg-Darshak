@@ -13,6 +13,7 @@ interface HeaderProps {
 }
 
 const CITIES: City[] = [
+  { id: 'hyderabad', name: 'Hyderabad', centerLat: 17.3850, centerLng: 78.4867, zoomLevel: 12, isActive: true },
   { id: 'bengaluru', name: 'Bengaluru', centerLat: 12.9716, centerLng: 77.5946, zoomLevel: 12, isActive: true },
   { id: 'mumbai', name: 'Mumbai', centerLat: 19.0760, centerLng: 72.8777, zoomLevel: 12, isActive: true },
   { id: 'delhi', name: 'Delhi', centerLat: 28.7041, centerLng: 77.1025, zoomLevel: 12, isActive: true },

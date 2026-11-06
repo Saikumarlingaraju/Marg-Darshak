@@ -46,10 +46,10 @@ interface UIState {
 }
 
 const DEFAULT_CITY: City = {
-  id: 'bengaluru',
-  name: 'Bengaluru',
-  centerLat: 12.9716,
-  centerLng: 77.5946,
+  id: 'hyderabad',
+  name: 'Hyderabad',
+  centerLat: 17.3850,
+  centerLng: 78.4867,
   zoomLevel: 12,
   isActive: true,
 };
@@ -96,6 +96,10 @@ export const useUIStore = create<UIState>()(
     {
       name: 'marg-darshak-ui',
       storage: createJSONStorage(() => localStorage),
+      version: 1,
+      migrate: () => ({
+        selectedCity: DEFAULT_CITY,
+      }),
       partialize: (state) => ({
         sidebarCollapsed: state.sidebarCollapsed,
         selectedCity: state.selectedCity,

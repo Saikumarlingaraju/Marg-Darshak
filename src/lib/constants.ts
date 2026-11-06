@@ -9,8 +9,9 @@ export const APP_VERSION = '1.0.0';
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api/v1';
 export const USE_MOCK_DATA = import.meta.env.VITE_USE_MOCK_DATA === 'true';
 
-export const DEFAULT_CITY = 'Bengaluru';
+export const DEFAULT_CITY = 'Hyderabad';
 export const CITIES = [
+  { id: 'hyderabad', name: 'Hyderabad', center: [17.3850, 78.4867], zoom: 12 },
   { id: 'bengaluru', name: 'Bengaluru', center: [12.9716, 77.5946], zoom: 12 },
   { id: 'mumbai', name: 'Mumbai', center: [19.0760, 72.8777], zoom: 12 },
   { id: 'delhi', name: 'Delhi', center: [28.7041, 77.1025], zoom: 12 },

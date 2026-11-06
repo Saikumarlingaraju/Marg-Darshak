@@ -66,10 +66,18 @@ export interface NavItem {
 
 /**
  * City configuration with correct coordinates for Indian cities
- * Bengaluru (default), Mumbai, Delhi
+ * Hyderabad (default), Bengaluru, Mumbai, Delhi
  * @mock
  */
 export const MOCK_CITIES: City[] = [
+  {
+    id: 'hyderabad',
+    name: 'Hyderabad',
+    centerLat: 17.3850,
+    centerLng: 78.4867,
+    zoomLevel: 11,
+    isActive: true,
+  },
   {
     id: 'bengaluru',
     name: 'Bengaluru',
@@ -97,7 +105,7 @@ export const MOCK_CITIES: City[] = [
 ] as const;
 
 /**
- * Default city (Bengaluru)
+ * Default city (Hyderabad)
  * @mock
  */
 export const MOCK_DEFAULT_CITY = MOCK_CITIES[0];

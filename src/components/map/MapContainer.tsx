@@ -1,4 +1,4 @@
-import { MapContainer as LeafletMapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer as LeafletMapContainer, TileLayer, useMap } from 'react-leaflet';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import { cn } from '@/lib/utils';
@@ -17,6 +17,16 @@ interface MapContainerProps {
   style?: React.CSSProperties;
   center?: [number, number];
   zoom?: number;
+}
+
+function MapViewportSync({ center, zoom }: { center: [number, number]; zoom: number }) {
+  const map = useMap();
+
+  useEffect(() => {
+    map.setView(center, zoom);
+  }, [center, map, zoom]);
+
+  return null;
 }
 
 export function MapContainer({
@@ -100,6 +110,7 @@ export function MapContainer({
         attributionControl={true}
         zoomControl={true}
       >
+        <MapViewportSync center={center} zoom={zoom} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

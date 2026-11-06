@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { DataTable, type ColumnDef } from '@/components/ui/Table';
 import { api, queryKeys, type DetectionRecord } from '@/lib/api';
+import { useUIStore } from '@/store/uiStore';
 
 const PAGE_SIZE = 6;
 
@@ -33,6 +34,7 @@ function getActivityStatus(index: number): 'pending' | 'in_progress' | 'resolved
 }
 
 export function DashboardPage() {
+  const selectedCity = useUIStore((state) => state.selectedCity);
   const [page, setPage] = useState(1);
   const [sortKey, setSortKey] = useState<'detectedAt' | 'severity' | 'location'>('detectedAt');
   const [sortDescending, setSortDescending] = useState(true);
@@ -113,7 +115,7 @@ export function DashboardPage() {
             <Badge variant="success" size="sm" dot>Live data</Badge>
           </div>
           <p className="mt-2 text-body-base text-neutral-600">
-            Bengaluru · A connected view of road health, detection activity and monitoring coverage.
+            {selectedCity.name} · A connected view of road health, detection activity and monitoring coverage.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -140,10 +142,10 @@ export function DashboardPage() {
               <CardTitle>Infrastructure intelligence</CardTitle>
               <p className="mt-1 text-body-xs text-neutral-600">GPS-tagged detections across the monitored road network</p>
             </div>
-            <span className="text-body-sm font-semibold text-info">Bengaluru</span>
+            <span className="text-body-sm font-semibold text-info">{selectedCity.name}</span>
           </CardHeader>
           <div className="h-[430px] border-t border-neutral-200">
-            <MapContainer style={{ height: '100%' }} center={[12.9716, 77.5946]} zoom={11} />
+            <MapContainer style={{ height: '100%' }} center={[selectedCity.centerLat, selectedCity.centerLng]} zoom={selectedCity.zoomLevel} />
           </div>
         </Card>
 

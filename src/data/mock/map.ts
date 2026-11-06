@@ -1,6 +1,6 @@
 /**
  * Mock Map data for Marg-Darshak Dashboard
- * Map layers and urban blocks for Bengaluru
+ * Map layers and urban blocks for Hyderabad
  * @packageDocumentation
  */
 
@@ -25,13 +25,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'ph-001',
               severity: 'critical',
-              title: 'Large pothole on MG Road',
+              title: 'Large pothole on Banjara Hills Road',
               detectedAt: '2026-11-04T08:30:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6093, 12.9719],
+              coordinates: [78.4985, 17.3852],
             },
           },
           {
@@ -40,13 +40,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'ph-002',
               severity: 'high',
-              title: 'Pothole near Brigade Road junction',
+              title: 'Pothole near Road No. 12, Banjara Hills junction',
               detectedAt: '2026-11-04T10:15:00Z',
               status: 'in_progress',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6108, 12.9725],
+              coordinates: [78.4997, 17.3857],
             },
           },
           {
@@ -55,13 +55,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'ph-003',
               severity: 'medium',
-              title: 'Surface damage on Church Street',
+              title: 'Surface damage on Jubilee Hills Road',
               detectedAt: '2026-11-03T14:20:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6072, 12.9741],
+              coordinates: [78.4968, 17.387],
             },
           },
           {
@@ -70,13 +70,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'ph-004',
               severity: 'high',
-              title: 'Deep pothole on Residency Road',
+              title: 'Deep pothole on Somajiguda Main Road',
               detectedAt: '2026-11-04T06:45:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.5982, 12.9789],
+              coordinates: [78.4896, 17.3908],
             },
           },
           {
@@ -91,7 +91,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6382, 12.9545],
+              coordinates: [78.5216, 17.3713],
             },
           },
         ],
@@ -117,13 +117,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'sl-001',
               severity: 'high',
-              title: 'Streetlight out on 100ft Road, Indiranagar',
+              title: 'Streetlight out on 100ft Road, Begumpet',
               detectedAt: '2026-11-04T07:00:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6395, 12.9784],
+              coordinates: [78.5226, 17.3904],
             },
           },
           {
@@ -132,13 +132,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'sl-002',
               severity: 'medium',
-              title: 'Flickering light on Koramangala 80ft Road',
+              title: 'Flickering light on Kondapur 80ft Road',
               detectedAt: '2026-11-03T19:30:00Z',
               status: 'in_progress',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6252, 12.9352],
+              coordinates: [78.5112, 17.3559],
             },
           },
           {
@@ -153,7 +153,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6235, 12.9698],
+              coordinates: [78.5098, 17.3836],
             },
           },
         ],
@@ -185,7 +185,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6258, 12.9182],
+              coordinates: [78.5117, 17.3423],
             },
           },
           {
@@ -194,13 +194,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'dr-002',
               severity: 'high',
-              title: 'Overflowing manhole near Electronic City',
+              title: 'Overflowing manhole near Gachibowli',
               detectedAt: '2026-11-03T11:00:00Z',
               status: 'in_progress',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6622, 12.8456],
+              coordinates: [78.5408, 17.2842],
             },
           },
         ],
@@ -232,7 +232,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6058, 12.9752],
+              coordinates: [78.4957, 17.3879],
             },
           },
           {
@@ -247,7 +247,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.5937, 12.9763],
+              coordinates: [78.486, 17.3888],
             },
           },
         ],
@@ -273,13 +273,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'sg-001',
               severity: 'medium',
-              title: 'Missing speed limit sign on Outer Ring Road',
+              title: 'Missing speed limit sign on Nehru Outer Ring Road',
               detectedAt: '2026-11-03T15:00:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6875, 12.9582],
+              coordinates: [78.561, 17.3743],
             },
           },
           {
@@ -288,13 +288,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'sg-002',
               severity: 'low',
-              title: 'Faded directional sign near Hebbal Flyover',
+              title: 'Faded directional sign near Secunderabad Flyover',
               detectedAt: '2026-11-02T10:30:00Z',
               status: 'resolved',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.5972, 13.0358],
+              coordinates: [78.4888, 17.4364],
             },
           },
         ],
@@ -326,7 +326,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.5912, 13.0125],
+              coordinates: [78.484, 17.4177],
             },
           },
         ],
@@ -352,13 +352,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'mh-001',
               severity: 'high',
-              title: 'Missing manhole cover on Sarjapur Road',
+              title: 'Missing manhole cover on HITEC City Road',
               detectedAt: '2026-11-04T06:00:00Z',
               status: 'pending',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6582, 12.9245],
+              coordinates: [78.5376, 17.3473],
             },
           },
           {
@@ -367,13 +367,13 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             properties: {
               id: 'mh-002',
               severity: 'critical',
-              title: 'Damaged manhole frame on Whitefield Main Road',
+              title: 'Damaged manhole frame on Madhapur Main Road',
               detectedAt: '2026-11-04T04:30:00Z',
               status: 'in_progress',
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.7425, 12.9698],
+              coordinates: [78.605, 17.3836],
             },
           },
         ],
@@ -405,7 +405,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
             },
             geometry: {
               type: 'Point',
-              coordinates: [77.6312, 12.9345],
+              coordinates: [78.516, 17.3553],
             },
           },
         ],
@@ -423,7 +423,7 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
 };
 
 /**
- * Mock Urban Blocks for Bengaluru wards/zones
+ * Mock Urban Blocks for Hyderabad wards/zones
  * Polygons representing administrative boundaries with fill colors
  * Colors use exact chart.series1-5 from tailwind.config.ts
  * @mock
@@ -431,15 +431,15 @@ export const MOCK_MAP_INFRASTRUCTURE: MapLayerData = {
 export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   {
     id: 'ward-150',
-    name: 'Indiranagar Ward 150',
+    name: 'Begumpet Ward 150',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.6320, 12.9700],
-        [77.6450, 12.9700],
-        [77.6450, 12.9850],
-        [77.6320, 12.9850],
-        [77.6320, 12.9700],
+        [78.5166, 17.3837],
+        [78.527, 17.3837],
+        [78.527, 17.3957],
+        [78.5166, 17.3957],
+        [78.5166, 17.3837],
       ]],
     },
     fillColor: 'rgba(36, 107, 235, 0.15)',
@@ -447,15 +447,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-151',
-    name: 'Koramangala Ward 151',
+    name: 'Kondapur Ward 151',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.6180, 12.9280],
-        [77.6350, 12.9280],
-        [77.6350, 12.9450],
-        [77.6180, 12.9450],
-        [77.6180, 12.9280],
+        [78.5054, 17.3501],
+        [78.519, 17.3501],
+        [78.519, 17.3637],
+        [78.5054, 17.3637],
+        [78.5054, 17.3501],
       ]],
     },
     fillColor: 'rgba(73, 132, 210, 0.15)',
@@ -467,11 +467,11 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.6380, 12.9050],
-        [77.6550, 12.9050],
-        [77.6550, 12.9220],
-        [77.6380, 12.9220],
-        [77.6380, 12.9050],
+        [78.5214, 17.3317],
+        [78.535, 17.3317],
+        [78.535, 17.3453],
+        [78.5214, 17.3453],
+        [78.5214, 17.3317],
       ]],
     },
     fillColor: 'rgba(101, 157, 186, 0.15)',
@@ -479,15 +479,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-153',
-    name: 'BTM Layout Ward 153',
+    name: 'Tolichowki Ward 153',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.6050, 12.9100],
-        [77.6220, 12.9100],
-        [77.6220, 12.9270],
-        [77.6050, 12.9270],
-        [77.6050, 12.9100],
+        [78.495, 17.3357],
+        [78.5086, 17.3357],
+        [78.5086, 17.3493],
+        [78.495, 17.3493],
+        [78.495, 17.3357],
       ]],
     },
     fillColor: 'rgba(126, 178, 194, 0.15)',
@@ -495,15 +495,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-154',
-    name: 'Jayanagar Ward 154',
+    name: 'Kukatpally Ward 154',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.5850, 12.9200],
-        [77.6020, 12.9200],
-        [77.6020, 12.9370],
-        [77.5850, 12.9370],
-        [77.5850, 12.9200],
+        [78.479, 17.3437],
+        [78.4926, 17.3437],
+        [78.4926, 17.3573],
+        [78.479, 17.3573],
+        [78.479, 17.3437],
       ]],
     },
     fillColor: 'rgba(161, 196, 205, 0.15)',
@@ -511,15 +511,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-155',
-    name: 'Whitefield Ward 155',
+    name: 'Madhapur Ward 155',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.7350, 12.9600],
-        [77.7550, 12.9600],
-        [77.7550, 12.9800],
-        [77.7350, 12.9800],
-        [77.7350, 12.9600],
+        [78.599, 17.3757],
+        [78.615, 17.3757],
+        [78.615, 17.3917],
+        [78.599, 17.3917],
+        [78.599, 17.3757],
       ]],
     },
     fillColor: 'rgba(200, 212, 221, 0.15)',
@@ -527,15 +527,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-156',
-    name: 'Electronic City Ward 156',
+    name: 'Gachibowli Ward 156',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.6550, 12.8350],
-        [77.6750, 12.8350],
-        [77.6750, 12.8550],
-        [77.6550, 12.8550],
-        [77.6550, 12.8350],
+        [78.535, 17.2757],
+        [78.551, 17.2757],
+        [78.551, 17.2917],
+        [78.535, 17.2917],
+        [78.535, 17.2757],
       ]],
     },
     fillColor: 'rgba(222, 229, 237, 0.15)',
@@ -543,15 +543,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-157',
-    name: 'Rajajinagar Ward 157',
+    name: 'LB Nagar Ward 157',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.5500, 12.9900],
-        [77.5650, 12.9900],
-        [77.5650, 13.0050],
-        [77.5500, 13.0050],
-        [77.5500, 12.9900],
+        [78.451, 17.3997],
+        [78.463, 17.3997],
+        [78.463, 17.4117],
+        [78.451, 17.4117],
+        [78.451, 17.3997],
       ]],
     },
     fillColor: 'rgba(234, 240, 242, 0.15)',
@@ -559,15 +559,15 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
   },
   {
     id: 'ward-158',
-    name: 'Malleshwaram Ward 158',
+    name: 'Ameerpet Ward 158',
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.5650, 13.0000],
-        [77.5800, 13.0000],
-        [77.5800, 13.0150],
-        [77.5650, 13.0150],
-        [77.5650, 13.0000],
+        [78.463, 17.4077],
+        [78.475, 17.4077],
+        [78.475, 17.4197],
+        [78.463, 17.4197],
+        [78.463, 17.4077],
       ]],
     },
     fillColor: 'rgba(243, 246, 249, 0.15)',
@@ -579,11 +579,11 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
     geometry: {
       type: 'Polygon',
       coordinates: [[
-        [77.5900, 12.9700],
-        [77.6080, 12.9700],
-        [77.6080, 12.9850],
-        [77.5900, 12.9850],
-        [77.5900, 12.9700],
+        [78.483, 17.3837],
+        [78.4974, 17.3837],
+        [78.4974, 17.3957],
+        [78.483, 17.3957],
+        [78.483, 17.3837],
       ]],
     },
     fillColor: 'rgba(36, 107, 235, 0.1)',
@@ -592,11 +592,11 @@ export const MOCK_URBAN_BLOCKS: UrbanBlock[] = [
 ] as const;
 
 /**
- * Map viewport configuration for Bengaluru
+ * Map viewport configuration for Hyderabad
  * @mock
  */
 export const MOCK_MAP_VIEWPORT = {
-  center: [77.5946, 12.9716] as [number, number],
+  center: [78.4867, 17.385] as [number, number],
   zoom: 11,
   minZoom: 9,
   maxZoom: 18,

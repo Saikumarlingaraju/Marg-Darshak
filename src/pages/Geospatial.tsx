@@ -2,8 +2,10 @@ import { Map, Radio, ShieldCheck } from 'lucide-react';
 import { MapContainer } from '@/components/map';
 import { Badge } from '@/components/ui/Badge';
 import { Card, CardContent } from '@/components/ui/Card';
+import { useUIStore } from '@/store/uiStore';
 
 export default function Geospatial() {
+  const selectedCity = useUIStore((state) => state.selectedCity);
   return (
     <div className="space-y-5">
       <section className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -13,7 +15,7 @@ export default function Geospatial() {
             <Badge variant="success" size="sm" dot>Live workspace</Badge>
           </div>
           <p className="mt-2 text-body-base text-neutral-600">
-            Explore road infrastructure observations, coverage boundaries and maintenance status across Bengaluru.
+            Explore road infrastructure observations, coverage boundaries and maintenance status across {selectedCity.name}.
           </p>
         </div>
         <div className="flex items-center gap-2 text-body-sm text-neutral-600">
@@ -60,10 +62,10 @@ export default function Geospatial() {
               Toggle layers and combine filters to inspect individual detections.
             </p>
           </div>
-          <span className="text-body-sm font-semibold text-info">Bengaluru, India</span>
+          <span className="text-body-sm font-semibold text-info">{selectedCity.name}, India</span>
         </div>
         <div className="h-[min(72vh,720px)] min-h-[520px]">
-          <MapContainer center={[12.9716, 77.5946]} zoom={11} style={{ height: '100%' }} />
+          <MapContainer center={[selectedCity.centerLat, selectedCity.centerLng]} zoom={selectedCity.zoomLevel} style={{ height: '100%' }} />
         </div>
       </Card>
     </div>

@@ -19,46 +19,46 @@ export function RoadNetworkLayer() {
   const syntheticRoads = {
     type: 'FeatureCollection' as const,
     features: [
-      // Major arterial roads in Bengaluru (simplified)
+      // Major arterial roads in Hyderabad (simplified)
       {
         type: 'Feature' as const,
         id: 'road-outer-ring',
-        properties: { name: 'Outer Ring Road', type: 'arterial' as const },
+        properties: { name: 'Nehru Outer Ring Road', type: 'arterial' as const },
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.5500, 12.9900],
-            [77.5800, 12.9850],
-            [77.6100, 12.9750],
-            [77.6500, 12.9500],
-            [77.6900, 12.9300],
-            [77.7300, 12.9700],
+            [78.451, 17.3997],
+            [78.475, 17.3957],
+            [78.499, 17.3877],
+            [78.531, 17.3677],
+            [78.563, 17.3517],
+            [78.595, 17.3837],
           ],
         },
       },
       {
         type: 'Feature' as const,
         id: 'road-mg-road',
-        properties: { name: 'MG Road', type: 'arterial' as const },
+        properties: { name: 'Banjara Hills Road', type: 'arterial' as const },
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.5900, 12.9700],
-            [77.6050, 12.9750],
-            [77.6200, 12.9780],
+            [78.483, 17.3837],
+            [78.495, 17.3877],
+            [78.507, 17.3901],
           ],
         },
       },
       {
         type: 'Feature' as const,
         id: 'road-brigade',
-        properties: { name: 'Brigade Road', type: 'collector' as const },
+        properties: { name: 'Road No. 12, Banjara Hills', type: 'collector' as const },
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.6050, 12.9700],
-            [77.6120, 12.9730],
-            [77.6180, 12.9760],
+            [78.495, 17.3837],
+            [78.5006, 17.3861],
+            [78.5054, 17.3885],
           ],
         },
       },
@@ -69,35 +69,35 @@ export function RoadNetworkLayer() {
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.6000, 12.9500],
-            [77.6200, 12.9200],
-            [77.6400, 12.8900],
-            [77.6600, 12.8500],
+            [78.491, 17.3677],
+            [78.507, 17.3437],
+            [78.523, 17.3197],
+            [78.539, 17.2877],
           ],
         },
       },
       {
         type: 'Feature' as const,
         id: 'road-sarjapur',
-        properties: { name: 'Sarjapur Road', type: 'arterial' as const },
+        properties: { name: 'HITEC City Road', type: 'arterial' as const },
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.6200, 12.9400],
-            [77.6600, 12.9200],
-            [77.7000, 12.9400],
+            [78.507, 17.3597],
+            [78.539, 17.3437],
+            [78.571, 17.3597],
           ],
         },
       },
       {
         type: 'Feature' as const,
         id: 'road-whitefield',
-        properties: { name: 'Whitefield Main Road', type: 'arterial' as const },
+        properties: { name: 'Madhapur Main Road', type: 'arterial' as const },
         geometry: {
           type: 'LineString' as const,
           coordinates: [
-            [77.7200, 12.9650],
-            [77.7500, 12.9700],
+            [78.587, 17.3797],
+            [78.611, 17.3837],
           ],
         },
       },

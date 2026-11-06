@@ -166,7 +166,7 @@ export default function Landing() {
             </div>
             <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 shadow-panel">
               <div className="h-[420px] overflow-hidden rounded-lg">
-                <MapContainer center={[12.9716, 77.5946]} zoom={11} style={{ height: '100%' }} />
+                <MapContainer center={[17.3850, 78.4867]} zoom={11} style={{ height: '100%' }} />
               </div>
             </div>
           </div>
