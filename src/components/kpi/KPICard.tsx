@@ -35,7 +35,7 @@ export function KPICard({ data, className }: KPICardProps) {
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
             <p className="text-caption text-neutral-500 mb-2">{data.label}</p>
-            <p className="text-metric-value text-neutral-900 truncate">{data.value}</p>
+            <p className="text-metric-value text-neutral-900 whitespace-nowrap text-[27px]">{data.value}</p>
             {data.trend && (
               <div className="flex items-center gap-1.5 mt-3">
                 <TrendIcon

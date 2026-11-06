@@ -49,14 +49,13 @@ export function MainLayout(_props: MainLayoutProps) {
           className={cn(
             'transition-all duration-300 ease-out min-h-[calc(100vh-70px)]',
             'bg-neutral-50',
-            isMobile
-              ? 'ml-0'
-              : `ml-[${sidebarWidth}px]`
+            isMobile ? 'ml-0' : ''
           )}
+          style={!isMobile ? { marginLeft: sidebarWidth } : undefined}
           role="main"
           aria-label="Main content"
         >
-          <div className="p-[25px] p-[28px] pb-[24px]">
+          <div className="p-[25px] px-[28px] pb-[24px]">
             <Outlet />
           </div>
         </main>

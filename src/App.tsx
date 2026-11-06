@@ -8,6 +8,8 @@ import Alerts from '@/pages/Alerts';
 import Reports from '@/pages/Reports';
 import Settings from '@/pages/Settings';
 import Login from '@/pages/Login';
+import Geospatial from '@/pages/Geospatial';
+import Landing from '@/pages/Landing';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   // TODO: Add actual auth check when Catalyst Auth is integrated
@@ -22,11 +24,13 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           
+          <Route path="/" element={<Landing />} />
+
           <Route element={<MainLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
             
             <Route element={<ProtectedRoute><Outlet /></ProtectedRoute>}>
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="dashboard/geospatial" element={<Geospatial />} />
               <Route path="dashboard/analytics" element={<Analytics />} />
               <Route path="dashboard/infrastructure" element={<Infrastructure />} />
               <Route path="dashboard/alerts" element={<Alerts />} />

@@ -37,7 +37,7 @@ export function LayerControls({ visibility, onChange, className }: LayerControls
   return (
     <div
       className={cn(
-        'absolute top-4 left-4 z-[10]',
+        'absolute top-4 left-4 z-[1000]',
         className
       )}
     >

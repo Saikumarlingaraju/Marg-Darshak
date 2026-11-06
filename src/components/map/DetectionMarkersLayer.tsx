@@ -4,11 +4,13 @@ import type { DetectionFeature } from './types';
 interface DetectionMarkersLayerProps {
   detections: DetectionFeature[];
   onDetectionClick?: (detection: DetectionFeature) => void;
+  selectedDetectionId?: string;
 }
 
 export function DetectionMarkersLayer({
   detections,
   onDetectionClick,
+  selectedDetectionId,
 }: DetectionMarkersLayerProps) {
   return (
     <>
@@ -17,6 +19,7 @@ export function DetectionMarkersLayer({
           key={detection.id}
           detection={detection}
           onClick={onDetectionClick}
+          isSelected={detection.id === selectedDetectionId}
         />
       ))}
     </>

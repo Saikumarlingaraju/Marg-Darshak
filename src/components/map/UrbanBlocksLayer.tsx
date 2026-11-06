@@ -70,12 +70,14 @@ export function UrbanBlocksLayer({ blocks, onBlockClick }: UrbanBlocksLayerProps
 
   const handleMouseOver = (event: L.LeafletMouseEvent) => {
     const layer = event.layer as L.Path;
+    if (!layer || typeof layer.setStyle !== 'function') return;
     layer.setStyle(highlightStyle);
     layer.bringToFront();
   };
 
   const handleMouseOut = (event: L.LeafletMouseEvent) => {
     const layer = event.layer as L.Path;
+    if (!layer || typeof layer.setStyle !== 'function') return;
     const feature = (layer as L.Layer & { feature?: UrbanBlockFeature }).feature;
     if (feature) {
       layer.setStyle(style(feature));

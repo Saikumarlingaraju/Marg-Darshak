@@ -136,12 +136,14 @@ export function RoadNetworkLayer() {
 
   const handleMouseOver = (event: L.LeafletMouseEvent) => {
     const layer = event.layer as L.Path;
+    if (!layer || typeof layer.setStyle !== 'function') return;
     layer.setStyle(highlightStyle);
     layer.bringToFront();
   };
 
   const handleMouseOut = (event: L.LeafletMouseEvent) => {
     const layer = event.layer as L.Path;
+    if (!layer || typeof layer.setStyle !== 'function') return;
     const feature = (layer as L.Layer & { feature?: GeoJSON.Feature }).feature;
     if (feature) {
       layer.setStyle(style(feature as GeoJSON.Feature<GeoJSON.LineString, RoadFeatureProperties>));

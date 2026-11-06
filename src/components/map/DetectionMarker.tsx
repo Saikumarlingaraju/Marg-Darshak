@@ -26,9 +26,10 @@ const typeIcons: Record<string, string> = {
 interface DetectionMarkerProps {
   detection: DetectionFeature;
   onClick?: (detection: DetectionFeature) => void;
+  isSelected?: boolean;
 }
 
-export function DetectionMarker({ detection, onClick }: DetectionMarkerProps) {
+export function DetectionMarker({ detection, onClick, isSelected = false }: DetectionMarkerProps) {
   const { properties, geometry } = detection;
   const [lng, lat] = geometry.coordinates;
   const severity = properties.severity;
@@ -53,7 +54,7 @@ export function DetectionMarker({ detection, onClick }: DetectionMarkerProps) {
             border-radius: 50% 50% 50% 0;
             background: ${color};
             border: 3px solid white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: ${isSelected ? '0 0 0 4px rgba(36,107,235,0.35), 0 4px 16px rgba(0,0,0,0.45)' : '0 2px 8px rgba(0,0,0,0.3)'};
             display: flex;
             align-items: center;
             justify-content: center;
@@ -89,7 +90,7 @@ export function DetectionMarker({ detection, onClick }: DetectionMarkerProps) {
       iconAnchor: [18, 42],
       popupAnchor: [0, -36],
     });
-  }, [color, icon]);
+  }, [color, icon, isSelected]);
 
   const markerRef = useRef<L.Marker | null>(null);
 
@@ -128,6 +129,7 @@ export function DetectionMarker({ detection, onClick }: DetectionMarkerProps) {
       title={properties.title}
       riseOnHover={true}
       riseOffset={500}
+      eventHandlers={{ click: () => onClick?.(detection) }}
     />
   );
 }

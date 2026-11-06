@@ -37,6 +37,7 @@ export interface LayerVisibility {
 export interface MapFilters {
   severity: Array<'critical' | 'high' | 'medium' | 'low'>;
   detectionTypes: string[];
+  statuses: Array<'pending' | 'in_progress' | 'resolved' | 'dismissed'>;
   urbanBlocks: string[];
 }
 

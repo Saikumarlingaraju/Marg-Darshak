@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, Bell, Search, ChevronDown, LogOut, User, Settings, HelpCircle } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Bell, ChevronDown, LogOut, User, Settings, HelpCircle, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Dropdown } from '@/components/ui/Dropdown';
 import { Tooltip } from '@/components/ui/Tooltip';
@@ -18,6 +19,10 @@ const CITIES: City[] = [
 ];
 
 export function Header({ onMenuClick }: HeaderProps) {
+  const location = useLocation();
+  const currentWorkspace = location.pathname === '/dashboard/geospatial'
+    ? 'Geospatial intelligence'
+    : 'Operations overview';
   const { notificationsOpen, setNotificationsOpen, unreadCount, selectedCity, setSelectedCity, searchQuery, setSearchQuery } = useUIStore();
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -49,47 +54,29 @@ export function Header({ onMenuClick }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[40] h-[70px] bg-white border-b border-neutral-200 shadow-card">
+    <header className="fixed top-0 left-0 right-0 z-[40] h-[70px] bg-white border-b border-neutral-200">
       <div className="h-full px-[28px] flex items-center justify-between gap-4">
-        {/* Left: Menu button + Logo + Search */}
-        <div className="flex items-center gap-4 flex-1 min-w-0">
-          <Tooltip content="Toggle navigation" position="bottom">
-            <button
-              type="button"
-              onClick={onMenuClick}
-              className="p-2 text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
-              aria-label="Toggle navigation menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </Tooltip>
-
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-xl flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343M12 2a10 10 0 00-9.875 10M12 2a10 10 0 0110 10M12 2a10 10 0 100 20M12 2a10 10 0 110-20" />
-              </svg>
-            </div>
-            <span className="text-heading-sm text-primary font-semibold">Marg-Darshak</span>
-          </div>
-
-          {/* Search */}
-          <div className="relative flex-1 max-w-md hidden md:block">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-            <input
-              type="text"
-              placeholder="Search detections, inspections..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-md text-body-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary focus:bg-white transition-colors"
-              aria-label="Search"
-            />
+        <div className="flex items-center gap-3 min-w-0">
+          <button
+            type="button"
+            onClick={onMenuClick}
+            className="lg:hidden p-2 text-neutral-500 hover:bg-neutral-100 rounded-lg"
+            aria-label="Toggle navigation menu"
+          >
+            <span className="block w-5 space-y-1">
+              <span className="block h-px bg-current" />
+              <span className="block h-px bg-current" />
+              <span className="block h-px bg-current" />
+            </span>
+          </button>
+          <div className="hidden sm:flex items-center gap-[10px] text-body-base whitespace-nowrap">
+            <span className="text-neutral-600">Workspace</span>
+            <span className="text-neutral-400">/</span>
+            <span className="font-semibold text-primary">{currentWorkspace}</span>
           </div>
         </div>
 
-        {/* Right: City selector, Notifications, Profile */}
-        <div className="flex items-center gap-3 flex-shrink-0">
-          {/* City Selector */}
+        <div className="flex items-center gap-4 sm:gap-[22px] flex-shrink-0">
           <Tooltip content="Select city" position="bottom">
             <Dropdown
               options={cityOptions}
@@ -99,11 +86,22 @@ export function Header({ onMenuClick }: HeaderProps) {
                 if (city) setSelectedCity(city);
               }}
               placeholder="Select city"
-              className="w-40"
+              className="w-[150px]"
             />
           </Tooltip>
 
-          {/* Notifications */}
+          <div className="hidden md:block relative w-40">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 bg-neutral-50 border border-neutral-200 rounded-md text-body-sm"
+              aria-label="Search"
+            />
+          </div>
+
           <Tooltip content={`${unreadCount} unread notifications`} position="bottom">
             <button
               type="button"
@@ -126,7 +124,10 @@ export function Header({ onMenuClick }: HeaderProps) {
             </button>
           </Tooltip>
 
-          {/* Profile */}
+          <span className="hidden xl:inline text-caption font-semibold text-success whitespace-nowrap">
+            LIVE WORKSPACE
+          </span>
+
           <Tooltip content="User menu" position="bottom">
             <div className="relative">
               <button
@@ -139,7 +140,7 @@ export function Header({ onMenuClick }: HeaderProps) {
                 <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                   <span className="text-body-sm font-medium text-primary">JD</span>
                 </div>
-                <span className="hidden sm:block text-body-sm font-medium text-neutral-700">John Doe</span>
+                <span className="hidden xl:block text-body-sm font-medium text-neutral-700">John Doe</span>
                 <ChevronDown className="w-4 h-4 text-neutral-400" />
               </button>
 

@@ -16,6 +16,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { useUIStore } from '@/store/uiStore';
 
@@ -80,6 +81,7 @@ interface SidebarProps {
 
 export function Sidebar({ onClose }: SidebarProps) {
   const { sidebarOpen, sidebarCollapsed, toggleSidebarCollapsed } = useUIStore();
+  const navigate = useNavigate();
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['detections', 'settings']));
 
   if (!sidebarOpen) return null;
@@ -94,6 +96,13 @@ export function Sidebar({ onClose }: SidebarProps) {
   };
 
   const isExpanded = (id: string) => expandedItems.has(id);
+  const routeFor = (id: string) => ({
+    dashboard: '/dashboard',
+    map: '/dashboard/geospatial',
+    analytics: '/dashboard/analytics',
+    alerts: '/dashboard/alerts',
+    settings: '/dashboard/settings',
+  }[id]);
 
   const renderNavItem = (item: NavItem, level = 0) => {
     const hasChildren = item.children && item.children.length > 0;
@@ -107,7 +116,7 @@ export function Sidebar({ onClose }: SidebarProps) {
             onClick={() => toggleItem(item.id)}
             className={cn(
               'w-full flex items-center gap-3 px-3 py-2 rounded-lg',
-              'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100',
+              'text-white/70 hover:text-white hover:bg-white/10',
               'transition-colors duration-150',
               'focus:outline-none focus:ring-2 focus:ring-primary/50',
               sidebarCollapsed && level === 0 && 'justify-center px-2'
@@ -135,7 +144,7 @@ export function Sidebar({ onClose }: SidebarProps) {
                 )}
                 <ChevronDown
                   className={cn(
-                    'w-4 h-4 text-neutral-400 flex-shrink-0 transition-transform',
+                    'w-4 h-4 text-white/40 flex-shrink-0 transition-transform',
                     expanded && 'rotate-180'
                   )}
                 />
@@ -145,9 +154,16 @@ export function Sidebar({ onClose }: SidebarProps) {
         ) : (
           <button
             type="button"
+            onClick={() => {
+              const route = routeFor(item.id);
+              if (route) {
+                navigate(route);
+                if (onClose) onClose();
+              }
+            }}
             className={cn(
               'w-full flex items-center gap-3 px-3 py-2 rounded-lg',
-              'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100',
+              'text-white/70 hover:text-white hover:bg-white/10',
               'transition-colors duration-150',
               'focus:outline-none focus:ring-2 focus:ring-primary/50',
               sidebarCollapsed && level === 0 && 'justify-center px-2'
@@ -161,10 +177,10 @@ export function Sidebar({ onClose }: SidebarProps) {
               <span
                 className={cn(
                   'px-1.5 py-0.5 text-caption-xs font-medium rounded-full flex-shrink-0',
-                  item.badgeColor === 'error' && 'bg-error-bg text-error',
-                  item.badgeColor === 'warning' && 'bg-warning-bg text-warning',
-                  item.badgeColor === 'info' && 'bg-info-bg text-info',
-                  item.badgeColor === 'success' && 'bg-success-bg text-success'
+                  item.badgeColor === 'error' && 'bg-error text-white',
+                  item.badgeColor === 'warning' && 'bg-warning text-white',
+                  item.badgeColor === 'info' && 'bg-info text-white',
+                  item.badgeColor === 'success' && 'bg-success text-white'
                 )}
               >
                 {item.badge > 99 ? '99+' : item.badge}
@@ -179,9 +195,16 @@ export function Sidebar({ onClose }: SidebarProps) {
               <button
                 key={child.id}
                 type="button"
+                onClick={() => {
+                  const route = routeFor(child.id);
+                  if (route) {
+                    navigate(route);
+                    onClose();
+                  }
+                }}
                 className={cn(
                   'w-full flex items-center gap-2 px-3 py-1.5 rounded-md',
-                  'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100',
+                  'text-white/55 hover:text-white hover:bg-white/10',
                   'text-body-sm transition-colors duration-150',
                   'focus:outline-none focus:ring-2 focus:ring-primary/50'
                 )}
@@ -199,7 +222,7 @@ export function Sidebar({ onClose }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'fixed top-[70px] left-0 bottom-0 z-[35] bg-white border-r border-neutral-200',
+        'fixed top-[70px] left-0 bottom-0 z-[35] bg-primary border-r border-primary-light',
         'transition-all duration-300 ease-out',
         'flex flex-col',
         sidebarCollapsed ? 'w-16' : 'w-64',
@@ -215,7 +238,7 @@ export function Sidebar({ onClose }: SidebarProps) {
       </nav>
 
       {/* Collapse/Expand Toggle */}
-      <div className="p-3 border-t border-neutral-100">
+      <div className="p-3 border-t border-white/10">
         <Button
           variant="ghost"
           size="sm"
@@ -236,7 +259,7 @@ export function Sidebar({ onClose }: SidebarProps) {
       </div>
 
       {/* Mobile Close Button */}
-      <div className="p-3 border-t border-neutral-100 lg:hidden">
+      <div className="p-3 border-t border-white/10 lg:hidden">
         <Button variant="outline" size="sm" fullWidth onClick={onClose}>
           Close Menu
         </Button>

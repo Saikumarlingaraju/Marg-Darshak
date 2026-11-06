@@ -13,6 +13,12 @@ const severityOptions: Array<{ value: 'critical' | 'high' | 'medium' | 'low'; la
   { value: 'medium', label: 'Medium', color: '#d9b800' },
   { value: 'low', label: 'Low', color: '#246beb' },
 ];
+const statusOptions: Array<{ value: MapFilters['statuses'][number]; label: string }> = [
+  { value: 'pending', label: 'Pending' },
+  { value: 'in_progress', label: 'In progress' },
+  { value: 'resolved', label: 'Resolved' },
+  { value: 'dismissed', label: 'Dismissed' },
+];
 
 interface MapFiltersProps {
   filters: MapFilters;
@@ -46,6 +52,7 @@ export function MapFilters({
   const hasActiveFilters =
     filters.severity.length !== 4 ||
     filters.detectionTypes.length > 0 ||
+    filters.statuses.length !== 4 ||
     filters.urbanBlocks.length > 0;
 
   const severityDropdownOptions: DropdownOption[] = severityOptions.map((s) => ({
@@ -73,6 +80,10 @@ export function MapFilters({
     onChange({ ...filters, detectionTypes: types });
   };
 
+  const handleStatusChange = (selected: string) => {
+    onChange({ ...filters, statuses: selected.split(',').filter(Boolean) as MapFilters['statuses'] });
+  };
+
   const handleBlocksChange = (selected: string) => {
     const blocks = selected.split(',').filter(Boolean);
     onChange({ ...filters, urbanBlocks: blocks });
@@ -82,6 +93,7 @@ export function MapFilters({
     onChange({
       severity: ['critical', 'high', 'medium', 'low'],
       detectionTypes: [],
+      statuses: ['pending', 'in_progress', 'resolved', 'dismissed'],
       urbanBlocks: [],
     });
   };
@@ -90,7 +102,7 @@ export function MapFilters({
     <div
       ref={dropdownRef}
       className={cn(
-        'absolute top-4 right-4 z-[10]',
+        'absolute top-4 right-4 z-[1000]',
         className
       )}
     >
@@ -192,6 +204,20 @@ export function MapFilters({
                 />
               </div>
             )}
+
+            <div>
+              <label className="block text-caption font-medium text-neutral-700 mb-1.5">
+                Maintenance status
+                <span className="text-neutral-400 ml-1">({filters.statuses.length}/4)</span>
+              </label>
+              <Dropdown
+                options={statusOptions}
+                value={filters.statuses.join(',')}
+                placeholder="Select statuses"
+                onChange={handleStatusChange}
+                multiSelect={true}
+              />
+            </div>
 
             {/* Urban Block Filter */}
             {availableBlocks.length > 0 && (

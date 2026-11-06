@@ -43,7 +43,7 @@ export function MapLegend({ className }: MapLegendProps) {
   return (
     <div
       className={cn(
-        'absolute bottom-4 right-4 z-[10]',
+        'absolute bottom-4 right-4 z-[1000]',
         className
       )}
     >

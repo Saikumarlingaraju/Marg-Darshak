@@ -34,6 +34,7 @@ export function MapContainer({
   const [filters, setFilters] = useState<MapFiltersType>({
     severity: ['critical', 'high', 'medium', 'low'],
     detectionTypes: [],
+    statuses: ['pending', 'in_progress', 'resolved', 'dismissed'],
     urbanBlocks: [],
   });
   const [selectedDetection, setSelectedDetection] = useState<DetectionFeature | null>(null);
@@ -54,8 +55,9 @@ export function MapContainer({
   const filteredDetections = allDetections.filter((detection) => {
     const severityMatch = filters.severity.length === 0 || filters.severity.includes(detection.properties.severity);
     const typeMatch = filters.detectionTypes.length === 0 || filters.detectionTypes.includes(detection.properties.layerType);
+    const statusMatch = filters.statuses.length === 0 || filters.statuses.includes(detection.properties.status);
     const blockMatch = filters.urbanBlocks.length === 0 || filters.urbanBlocks.includes(detection.properties.urbanBlock || '');
-    return severityMatch && typeMatch && blockMatch;
+    return severityMatch && typeMatch && statusMatch && blockMatch;
   });
 
   useEffect(() => {
@@ -128,6 +130,7 @@ export function MapContainer({
           <DetectionMarkersLayer
             detections={filteredDetections}
             onDetectionClick={setSelectedDetection}
+            selectedDetectionId={selectedDetection?.id}
           />
         )}
 
